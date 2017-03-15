@@ -122,7 +122,6 @@ html {
 				animation-name: fadeIn;
 		}
 		/* Описываем анимацию свойства opacity */
-
 		@keyframes fadeIn {
 				from {
 						opacity: 0;
@@ -133,13 +132,11 @@ html {
 		}
 
 		/* Прячем чекбоксы */
-
 		.tabs > input {
 				display: none;
 				position: absolute;
 		}
 		/* Стили переключателей вкладок (табов) */
-
 		.tabs > label {
 				display: inline-block;
 				min-width: 62px;
@@ -157,7 +154,7 @@ html {
 
 		.tabs > label:before {
 			display: none;
-			font-family: fontawesome;
+			font-family:'FontAwesome';
 			font-weight: normal;
 			margin-right: 10px;
 		}
@@ -209,6 +206,9 @@ html {
 	margin-bottom: 10px;
 	font-size: 16px;
 	border-radius: 3px;
+}
+.field-selection > input{
+	width:340px;
 }
 /*Стилизуем поля ввода при наведении*/
 .field-selection > input:hover, .field-selection > select:hover, .half > select:hover{
