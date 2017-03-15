@@ -86,7 +86,7 @@ html {
 /*--------- настройки форм ----------*/
 .slider{
 	background-color: #B5CBD9;
-	background-image:url("/img/img_slider1.jpg");
+	background-image:url("../img/img_slider1.jpg");
 	background-repeat:no-repeat;
 }
 .filter-form {
