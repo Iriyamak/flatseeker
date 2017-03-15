@@ -85,7 +85,7 @@ html {
 
 /*--------- настройки форм ----------*/
 .slider{
-	
+
 	background-image:url("../img/img_slider1.jpg");
 	background-repeat:no-repeat;
 }
@@ -162,19 +162,19 @@ html {
 			margin-right: 10px;
 		}
 
-		.tabs > label[for*="1"]:before {
+		.tabs > label[for*="tab1"]:before {
 				content: "\f19c";
 		}
 
-		.tabs > label[for*="2"]:before {
+		.tabs > label[for*="tab2"]:before {
 				content: "\f0f7";
 		}
 
-		.tabs > label[for*="3"]:before {
+		.tabs > label[for*="tab3"]:before {
 				content: "\f03e";
 		}
 
-		.tabs > label[for*="4"]:before {
+		.tabs > label[for*="tab4"]:before {
 				content: "\f046";
 		}
 		/* Изменения стиля переключателей вкладок при наведении */
@@ -259,11 +259,12 @@ html {
 		@media screen and (max-width: 680px) {
 				.tabs > label {
 						font-size: 0;
-						width: 25%;
+						width: 17%;
 				}
 				.tabs > label:before {
 						display: block;
 						margin: 0;
+
 						font-size: 18px;
 				}
 		}
