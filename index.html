@@ -67,7 +67,6 @@
         		<label for="tab3" title="Land">Land</label>
         		<input id="tab4" type="radio" name="tabs">
         		<label for="tab4" title="All">All</label>
-
         		<section id="content-tab1">
               <form action="/echo" method="get" id="tab1">
                 <div class="field-selection">
@@ -494,7 +493,7 @@
                 <div class="field-selection">
                   <label for="land-area">Land Area</label>
                   <select class="form-select" name="land-area" id="land-area" size="1">
-                    <option value="All" selected="selected">Land Area </option>
+                    <option value="All" selected>Land Area </option>
                     <option value="400sqm-600sqm">400sqm-600sqm</option>
                     <option value="600sqm-800sqm">600sqm-800sqm</option>
                     <option value="800sqm-1000sqm">800sqm-1000sqm</option>
@@ -523,17 +522,14 @@
                 </div>
                 <div class="field-selection">
                   <label for="village">Village</label>
-                  <input type="text" name="village" id="village"
-                   value="" placeholder="Village">
-                   <input type="hidden" id="village-autocomplete" value="" disabled="disabled" class="autocomplete" />
+                  <input type="text" name="village" id="village" value="" placeholder="Village">
+                  <input type="hidden" id="village-autocomplete" value="" disabled="disabled" class="autocomplete" />
                 </div>
                 <div class="field-selection">
                   <label for="hooth">Block</label>
-                  <input type="text" name="hooth" id="hooth"
-                   value="" placeholder="Block">
-                   <input type="hidden" id="village-autocomplete" value="" disabled="disabled" class="autocomplete" />
+                  <input type="text" name="hooth" id="hooth" value="" placeholder="Block">
+                  <input type="hidden" id="village-autocomplete" value="" disabled="disabled" class="autocomplete" />
                 </div>
-
                 <div class="submit-button">
           			 <input type="submit" id="submit-items" name="" value="Find Properties" class="form-submit" />
                 </div>
@@ -548,9 +544,8 @@
                 </div>
                 <div class="field-selection location">
                   <label for="field_location"></label>
-                  <select class="form-select"
-                  name="field_location" id="field_location" size="1">
-      			         <option value="choose the location" selected="selected">choose the location</option>
+                  <select class="form-select" name="field_location" id="field_location" size="1">
+      			         <option value="choose the location" selected>choose the location</option>
                      <option value="19">7th circle</option>
                   	 <option value="10">Abdoun</option>
                   	 <option value="23">Airport Road</option>
@@ -580,13 +575,11 @@
                 </div>
                 <div class="field-selection">
                   <label for="price">Price</label>
-                  <input type="text" name="price_value[min]" id="price"
-                   value="" placeholder="7000-11000000">
-                   <input type="hidden" name="price_value[max]" id="price"
-                   value="" placeholder="11000000">
-                   <div class="submit-button">
-             			 <input type="submit" id="submit-items" name="" value="Find Properties" class="form-submit" />
-                   </div>
+                  <input type="text" name="price_value[min]" id="price" value="" placeholder="7000-11000000">
+                  <input type="hidden" name="price_value[max]" id="price" value="" placeholder="11000000">
+                  <div class="submit-button">
+             			  <input type="submit" id="submit-items" name="" value="Find Properties" class="form-submit" />
+                  </div>
               </form>
         		</section>
           </div>

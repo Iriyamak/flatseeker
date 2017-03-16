@@ -85,41 +85,35 @@ html {
 
 /*--------- настройки форм ----------*/
 .slider{
-
 	background-image:url("../img/img_slider1.jpg");
 	background-repeat:no-repeat;
 }
 .filter-form {
-				left: 65%;
-				margin: 25px 8% 25px auto;
-				width: 400px;
-		}
-
+	left: 65%;
+	margin: 25px 8% 25px auto;
+	width: 400px;
+}
 		/* Базовый контейнер табов */
-
-		.tabs {
-				width: 400px;
-				padding: 0px;
-				margin: 0 auto;
-		}
-
+	.tabs {
+		width: 400px;
+		padding: 0px;
+		margin: 0 auto;
+	}
 		/* Стили секций с содержанием */
-
 		.tabs > section {
-				display: none;
-				padding: 5px 20px 15px;
-				background: rgba(248,248,246,0.6);
-				border-top: 2px solid #ce242b;
+			display: none;
+			padding: 5px 20px 15px;
+			background: rgba(248,248,246,0.6);
+			border-top: 2px solid #ce242b;
 		}
-
 		.tabs > section > #tab1,
 		.tabs > section > #tab2,
 		.tabs > section > #tab3,
 		.tabs > section > #tab4 {
-				/* прикрутим анимацию */
-				animation-duration: 1s;
-				animation-fill-mode: both;
-				animation-name: fadeIn;
+			/* прикрутим анимацию */
+			animation-duration: 1s;
+			animation-fill-mode: both;
+			animation-name: fadeIn;
 		}
 		/* Описываем анимацию свойства opacity */
 		@keyframes fadeIn {
@@ -130,153 +124,140 @@ html {
 						opacity: 1;
 				}
 		}
-
 		/* Прячем чекбоксы */
 		.tabs > input {
-				display: none;
-				position: absolute;
+			display: none;
+			position: absolute;
 		}
 		/* Стили переключателей вкладок (табов) */
 		.tabs > label {
-				display: inline-block;
-				min-width: 62px;
-				margin-right: -4px;
-				padding: 10px 15px;
-				font-size: 16px;
-				font-weight: 500;
-				text-align: center;
-				color: #fff;
-				border-right: 2px solid #ce242b;
-				background: #000;
-				border-radius: 3px 3px 0 0;
+			display: inline-block;
+			min-width: 62px;
+			margin-right: -4px;
+			padding: 10px 15px;
+			font-size: 16px;
+			font-weight: 500;
+			text-align: center;
+			color: #fff;
+			border-right: 2px solid #ce242b;
+			background: #000;
+			border-radius: 3px 3px 0 0;
 		}
 		/* Шрифт-иконки от Font Awesome в формате Unicode */
-
 		.tabs > label:before {
 			display: none;
 			font-family:'FontAwesome';
 			font-weight: normal;
 			margin-right: 10px;
 		}
-
 		.tabs > label[for*="tab1"]:before {
-				content: "\f19c";
+			content: "\f19c";
 		}
-
 		.tabs > label[for*="tab2"]:before {
-				content: "\f0f7";
+			content: "\f0f7";
 		}
-
 		.tabs > label[for*="tab3"]:before {
-				content: "\f03e";
+			content: "\f03e";
 		}
-
 		.tabs > label[for*="tab4"]:before {
-				content: "\f046";
+			content: "\f046";
 		}
 		/* Изменения стиля переключателей вкладок при наведении */
-
 		.tabs > label:hover {
-				cursor: pointer;
+			cursor: pointer;
 		}
 		/* Стили для активной вкладки */
-
 		.tabs > input:checked + label {
-				color: #fff;
-				background: #ce242b;
+			color: #fff;
+			background: #ce242b;
 		}
 		/* Активация секций с помощью псевдокласса :checked */
-
 		#tab1:checked ~ #content-tab1,
 		#tab2:checked ~ #content-tab2,
 		#tab3:checked ~ #content-tab3,
 		#tab4:checked ~ #content-tab4 {
-				display: block;
-				border-radius: 0 0 3px 3px;
+			display: block;
+			border-radius: 0 0 3px 3px;
 		}
 		/*Стили для форм*/
-.field-selection > label, .half > label{
-	display: none;
-}
-.field-selection > input, .field-selection > select, .half > select{
-	width: 100%;
-	padding: 7px 10px;
-	border: none;
-	background: #f4f4f3;
-	margin-bottom: 10px;
-	font-size: 16px;
-	border-radius: 3px;
-}
-.field-selection > input{
-	width:340px;
-}
-/*Стилизуем поля ввода при наведении*/
-.field-selection > input:hover, .field-selection > select:hover, .half > select:hover{
-	background-color: rgba(192,192,192,0.5);
-}
-.field-selection:hover > input[type="text"]::-webkit-input-placeholder {
-	color:#ce242b;
-}
-.field-selection:hover > input[type="text"]::-moz-placeholder{
-	color:#ce242b;
-}
-.field-selection:hover > input[type="text"]:-ms-input-placeholder{
-	color:#ce242b;
-}
-
-.rent_r, .sale_r, .rent_c, .sale_c{
-	display: none;
-}
-.field-selection > select > option[value="choose the location"]{
-	color: #ce242b;
-}
-
-.field-half{
-	display: flex;
-	justify-content: space-between;
-}
-	.half{
-		width: 47%;
-	}
-.submit-button{
-	margin-top: 30px;
-}
-	.submit-button > input{
-		width: 100%;
-		padding: 7px 10px;
-		border: none;
-		background: #ce242b;
-		cursor: pointer;
-		font-size: 16px;
-		color: #fff;
-		border-radius: 3px;
-	}
-
-		/* Убираем текст с переключателей
-* и оставляем иконки на малых экранах
-*/
-
-		@media screen and (max-width: 680px) {
-				.tabs > label {
-						font-size: 0;
-						width: 17%;
-				}
-				.tabs > label:before {
-						display: block;
-						margin: 0;
-
-						font-size: 18px;
-				}
+		.field-selection > label,
+		.half > label{
+			display: none;
 		}
-
-		/* Изменяем внутренние отступы
-*  переключателей для малых экранов
-*/
-
-		@media screen and (max-width: 400px) {
-				.tabs > label {
-						padding: 15px;
-				}
+		.field-selection > input,
+		.field-selection > select,
+		.half > select{
+			width: 100%;
+			padding: 7px 10px;
+			border: none;
+			background: #f4f4f3;
+			margin-bottom: 10px;
+			font-size: 16px;
+			border-radius: 3px;
 		}
-
+		.field-selection > input{
+			width:340px;
+		}
+		/*Стилизуем поля ввода при наведении*/
+		.field-selection > input:hover,
+		.field-selection > select:hover,
+		.half > select:hover{
+			background-color: rgba(192,192,192,0.5);
+		}
+		.field-selection:hover > input[type="text"]::-webkit-input-placeholder {
+			color:#ce242b;
+		}
+		.field-selection:hover > input[type="text"]::-moz-placeholder{
+			color:#ce242b;
+		}
+		.field-selection:hover > input[type="text"]:-ms-input-placeholder{
+			color:#ce242b;
+		}
+		.rent_r,
+		.sale_r,
+		.rent_c,
+		.sale_c{
+			display: none;
+		}
+		.field-selection > select > option[value="choose the location"]{
+			color: #ce242b;
+		}
+	.field-half{
+		display: flex;
+		justify-content: space-between;
+	}
+		.half{
+			width: 47%;
+		}
+	.submit-button{
+		margin-top: 30px;
+	}
+		.submit-button > input{
+			width: 100%;
+			padding: 7px 10px;
+			border: none;
+			background: #ce242b;
+			cursor: pointer;
+			font-size: 16px;
+			color: #fff;
+			border-radius: 3px;
+		}
+/* Убираем текст с переключателей и вставляем иконки на малых экранах*/
+@media screen and (max-width: 680px) {
+	.tabs > label {
+		font-size: 0;
+		width: 17%;
+	}
+	.tabs > label:before {
+		display: block;
+		margin: 0;
+		font-size: 18px;
+	}
+}
+/* Изменяем внутренние отступы переключателей для малых экранов*/
+@media screen and (max-width: 400px) {
+	.tabs > label {
+		padding: 15px;
+	}
+}
 /*--------- конец настроек форм ----------*/
