@@ -1,56 +1,29 @@
-/* --------------- reset.css --------------- */
-html, body, div, span, h1, h2, h3, h4, h5, h6, p, em, img, strong, sub, sup, b, u, i,  dl, dt, dd, ol, ul, li, fieldset, form, label, table, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {
-	margin: 0;
-	padding: 0;
-	border: 0;
-	outline: 0;                               /* обнуляем отступы и убираем бордюры */
-	vertical-align: baseline;          /* приводим все к одной базовой линии */
-	background: transparent;      /* чтобы не проскакивали левые фоны, установленные по умолчанию */
-	font-size: 100%;                     /* размер шрифта всем одинаковый */
+@font-face {
+    font-family: "Lato";
+    src:
+		url("../fonts/Lato-Regular.ttf")  format("truetype");
+		font-weight: normal;
 }
-	a {                                      	     /* ссылка не в общем списке чтобы не сбрасывать outline по умолчанию */
-		margin:0;
-		padding:0;
-		font-size:100%;
-		vertical-align:baseline;
-		background:transparent;
-		outline:none;
-	}
-	table {						/* устраняем отступы между ячейками таблицы */
-		border-collapse: collapse;
-		border-spacing: 0;
-	}
-	td, td img {
-		vertical-align: top;			/* возвращаем привычное вертикальное выравнивание */
-	}
-	input, select, button, textarea {
-		margin: 0; 				/* убираем отступы по умолчанию для элементов форм (в частности для checkbox и radio) */
-		font-size: 100%; 			/* делаем размер шрифтов везде одинаковым */
-		outline: none;
-	}
-	input[type="text"], input[type="password"], textarea {
-		padding: 0; 				/* убираем внутренние отступы для текстовых полей */
-	}
-	input[type="checkbox"] { 		/* вертикальное выравнивание чекбоксов и радиобатонов относительно меток */
-		vertical-align: bottom;
-	}
-	input[type="radio"] {
-		vertical-align: text-bottom;
-	}
-	sub {
-		vertical-align: sub;
-		font-size: smaller;
-	}
-	sup {
-		vertical-align: super;
-		font-size: smaller;
-	}
-	article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
-		display:block;
-	}
-	ul {
-		 list-style:none;
-	}
+@font-face {
+    font-family: "Lato";
+    src:
+		url("../fonts/Lato-Medium.ttf") format("truetype");
+    font-weight: 500;
+}
+@font-face {
+    font-family: "Lato";
+    src:
+    url("../fonts/Lato-Bold.ttf") format("truetype");
+    font-weight: bold;
+}
+@font-face {
+    font-family: "Lato";
+    src:
+		url("../fonts/Lato-Light.ttf") format("truetype");
+    font-weight: light;
+}
+
+
 /* --------------- базовые настройки ---------*/
 html {
 	min-height:100%; /* всегда показываем вертикальную полосу прокрутки  */
@@ -59,12 +32,16 @@ html {
 		color: #000;
 		background: #fff;
 		text-align: left;
+    margin: 0;
+    padding: 0;
 		font-size: 1em; /* используем безопасные шрифтовые CSS стеки */
 		min-height: 100%;
 	}
 	a, a:visited { /* порядок правил для ссылок имеет значение */
 		color: blue;
 		text-decoration: none;
+    padding: 0;
+    margin: 0;
 	}
 	a:hover {
 		color: green;
@@ -80,184 +57,408 @@ html {
 	.centerfix{
 		max-width: 1200px;
 		margin: 0 auto;
+		width: 100%;
 	}
-/* --------------- базовые настройки ---------*/
+  .clearfix:after {
+    clear: both;
+    content: "";
+    display: table;
+}
+/* --------------- /базовые настройки ---------*/
+/*------header-------*/
+	.header-01 {
+		animation-duration: 1.7s;
+    animation-name: slideInTop;
+    max-width: 1349px;
+    width: 100%;
+    margin: 0;
+    margin-bottom: 0;
+	}
+	.header-01 a {
+	  margin:  0;
+	  padding: 0;
 
-/*--------- настройки форм ----------*/
-.slider{
-	background-image:url("../img/img_slider1.jpg");
-	background-repeat:no-repeat;
-}
-.filter-form {
-	left: 65%;
-	margin: 25px 8% 25px auto;
-	width: 400px;
-}
-		/* Базовый контейнер табов */
-	.tabs {
-		width: 400px;
-		padding: 0px;
-		margin: 0 auto;
 	}
-		/* Стили секций с содержанием */
-		.tabs > section {
-			display: none;
-			padding: 5px 20px 15px;
-			background: rgba(248,248,246,0.6);
-			border-top: 2px solid #ce242b;
-		}
-		.tabs > section > #tab1,
-		.tabs > section > #tab2,
-		.tabs > section > #tab3,
-		.tabs > section > #tab4 {
-			/* прикрутим анимацию */
-			animation-duration: 1s;
-			animation-fill-mode: both;
-			animation-name: fadeIn;
-		}
-		/* Описываем анимацию свойства opacity */
-		@keyframes fadeIn {
-				from {
-						opacity: 0;
-				}
-				to {
-						opacity: 1;
-				}
-		}
-		/* Прячем чекбоксы */
-		.tabs > input {
-			display: none;
-			position: absolute;
-		}
-		/* Стили переключателей вкладок (табов) */
-		.tabs > label {
-			display: inline-block;
-			min-width: 62px;
-			margin-right: -4px;
-			padding: 10px 15px;
-			font-size: 16px;
-			font-weight: 500;
-			text-align: center;
-			color: #fff;
-			border-right: 2px solid #ce242b;
-			background: #000;
-			border-radius: 3px 3px 0 0;
-		}
-		/* Шрифт-иконки от Font Awesome в формате Unicode */
-		.tabs > label:before {
-			display: none;
-			font-family:'FontAwesome';
-			font-weight: normal;
-			margin-right: 10px;
-		}
-		.tabs > label[for*="tab1"]:before {
-			content: "\f19c";
-		}
-		.tabs > label[for*="tab2"]:before {
-			content: "\f0f7";
-		}
-		.tabs > label[for*="tab3"]:before {
-			content: "\f03e";
-		}
-		.tabs > label[for*="tab4"]:before {
-			content: "\f046";
-		}
-		/* Изменения стиля переключателей вкладок при наведении */
-		.tabs > label:hover {
-			cursor: pointer;
-		}
-		/* Стили для активной вкладки */
-		.tabs > input:checked + label {
-			color: #fff;
-			background: #ce242b;
-		}
-		/* Активация секций с помощью псевдокласса :checked */
-		#tab1:checked ~ #content-tab1,
-		#tab2:checked ~ #content-tab2,
-		#tab3:checked ~ #content-tab3,
-		#tab4:checked ~ #content-tab4 {
-			display: block;
-			border-radius: 0 0 3px 3px;
-		}
-		/*Стили для форм*/
-		.field-selection > label,
-		.half > label{
-			display: none;
-		}
-		.field-selection > input,
-		.field-selection > select,
-		.half > select{
-			width: 100%;
-			padding: 7px 10px;
-			border: none;
-			background: #f4f4f3;
-			margin-bottom: 10px;
-			font-size: 16px;
-			border-radius: 3px;
-		}
-		.field-selection > input{
-			width:340px;
-		}
-		/*Стилизуем поля ввода при наведении*/
-		.field-selection > input:hover,
-		.field-selection > select:hover,
-		.half > select:hover{
-			background-color: rgba(192,192,192,0.5);
-		}
-		.field-selection:hover > input[type="text"]::-webkit-input-placeholder {
-			color:#ce242b;
-		}
-		.field-selection:hover > input[type="text"]::-moz-placeholder{
-			color:#ce242b;
-		}
-		.field-selection:hover > input[type="text"]:-ms-input-placeholder{
-			color:#ce242b;
-		}
-		.rent_r,
-		.sale_r,
-		.rent_c,
-		.sale_c{
-			display: none;
-		}
-		.field-selection > select > option[value="choose the location"]{
-			color: #ce242b;
-		}
-	.field-half{
-		display: flex;
+	.header-01 .centerfix {
+	  display: flex;
 		justify-content: space-between;
 	}
-		.half{
-			width: 47%;
+  .header1 {
+    max-width: 864px;
+    width: 72%;
+  }
+		.header1 * {
+			display: flex;
+			justify-content: space-between;
 		}
-	.submit-button{
-		margin-top: 30px;
-	}
-		.submit-button > input{
-			width: 100%;
-			padding: 7px 10px;
-			border: none;
-			background: #ce242b;
-			cursor: pointer;
-			font-size: 16px;
-			color: #fff;
-			border-radius: 3px;
+		.header-top {
+      padding: 0;
+      border-bottom: 2px solid #999;
 		}
-/* Убираем текст с переключателей и вставляем иконки на малых экранах*/
-@media screen and (max-width: 680px) {
-	.tabs > label {
-		font-size: 0;
-		width: 17%;
-	}
-	.tabs > label:before {
-		display: block;
-		margin: 0;
-		font-size: 18px;
-	}
+      .top-menu {
+        display: flex;
+        justify-content: space-between;
+        margin: 0;
+        padding: 8px 0;
+      }
+        .top-menu li {
+          margin: 0 20px 0 0;
+        }
+        .top-menu a {
+          align-self: center;
+          color: #323232;
+          font-size: 15px;
+          font-family: "Lato-Light", sans-serif;
+          font-weight: 500;
+          opacity: 0.6;
+        }
+        .top-menu li a:hover {
+          color: #ce242b;
+        }
+        .top-menu li a:active {
+          color: #000;
+        }
+
+      /*--- search ---*/
+      .search-block {
+        width: 200px;
+        display: inline-block;
+        margin-right: 15px;
+        padding: 8px 0;
+
+      }
+        .search-form {
+          align-self: center;
+          background: #ededed;
+          border: 0;
+          border-radius: 7px;
+          padding: 5px 10px 5px 13px;
+          width: 91%;
+        }
+          .search-form .search {
+            width: 100%;
+            background: #ededed;
+            border: 0;
+            padding-left: 0;
+            color: 323232;
+            font-style: italic;
+            font-family: "Lato", sans-serif;;
+            font-size: 13px;
+            font-weight: bold;
+          }
+           .search-form input:webkit-input-placeholder {
+            color: #323232;
+            font-style: italic;
+            font-weight: bold;
+          }
+          .search-form .search-btn {
+            background: transparent;
+            margin-top: 0px;
+            width: 32px;
+          }
+          /*---Социальные кнопки---*/
+          .social {
+            align-self: center;
+          }
+          .social a {
+            margin-right: 5px;
+          }
+          .social-btn {
+            width: 32px;
+            height: 32px;
+            display: inline-block;
+            font-size: 0;
+            background: #fff;
+            border-radius: 50%;
+          }
+          .social-btn:hover,
+          .main-footer .btn:hover {
+            filter: invert(100%);
+          }
+          .social-btn-tw {
+            background: url(../img/tw.jpg) no-repeat center;
+          }
+          .social-btn-inst {
+            background: url(../img/inst.jpg) no-repeat center;
+          }
+          .social-btn-fb {
+            background: url(../img/fb.jpg) no-repeat center;
+          }
+
+
+        .bottom-menu {
+          display: flex;
+          justify-content: space-between;
+          padding: 0;
+          margin-top: 0;
+        }
+          .bottom-menu li {
+            padding: 40px 10px 10px;
+            margin-right: 2px;
+          }
+          .bottom-menu li a {
+          align-self: center;
+          color: #323232;
+          font-size: 16px;
+          font-family: "Lato-Light", sans-serif;
+          font-weight: 500;
+          padding: 5px 1px;
+        }
+          .bottom-menu li:nth-child(1),
+          .bottom-menu li:hover {
+            background: #f3eeee;
+            border-bottom: 2px solid #ce242b;
+          }
+
+     /*----слайдер----*/
+.slider{
+  max-width: 100%;
+  position: relative;
+  display: block;
+  height: 570px;
 }
-/* Изменяем внутренние отступы переключателей для малых экранов*/
-@media screen and (max-width: 400px) {
-	.tabs > label {
-		padding: 15px;
-	}
-}
-/*--------- конец настроек форм ----------*/
+  .slider .photo {
+  position: absolute;
+  animation: round 28s infinite;
+  opacity: 0;
+  width: 100%;
+  box-shadow: 0 2px 7px #000;
+  }
+
+  @keyframes round {
+    25% {
+      opacity: 1;
+    }
+    40% {
+      opacity: 0;
+    }
+  }
+    .photo:nth-child(1) {
+      animation-delay: 24s;
+    }
+
+    .photo:nth-child(2) {
+      animation-delay: 20s;
+    }
+
+    .photo:nth-child(3) {
+      animation-delay: 16s;
+    }
+
+    .photo:nth-child(4) {
+      animation-delay: 12s;
+    }
+    .photo:nth-child(5) {
+      animation-delay: 8s;
+    }
+    .photo:nth-child(6) {
+      animation-delay: 4s;
+    }
+    .photo:nth-child(7) {
+      animation-delay: 0s;
+    }
+    /*---banners---*/
+    .offer{
+      left: 0;
+      position: absolute;
+      top: 18%;
+      z-index: 4;
+      /*animation-duration: 1.7s;
+      animation-name: slideInLeft;*/
+    }
+      /*.sale{
+    left: 0;
+    position: absolute;
+    top: 10%;
+    z-index: 4;
+    }
+  .rent{
+        left: 0;
+        position: absolute;
+        top: 46%;
+        z-index: 4;
+    }*/
+
+  /*--------- настройки формы в слайдере ----------*/
+  .filter-form {
+    position: absolute;
+  	left: 65%;
+  	margin: 25px 8% 25px auto;
+  	width: 400px;
+    z-index: 3
+  }
+  		/* Базовый контейнер табов */
+  	.tabs {
+  		width: 400px;
+  		padding: 0px;
+  		margin: 0 auto;
+  	}
+  		/* Стили секций с содержанием */
+  		.tabs > section {
+  			display: none;
+  			padding: 5px 20px 15px;
+  			background: rgba(248,248,246,0.6);
+  			border-top: 2px solid #ce242b;
+  		}
+  		.tabs > section > #tab1,
+  		.tabs > section > #tab2,
+  		.tabs > section > #tab3,
+  		.tabs > section > #tab4 {
+  			/* прикрутим анимацию */
+  			animation-duration: 1s;
+  			animation-fill-mode: both;
+  			animation-name: fadeIn;
+  		}
+  		/* Описываем анимацию свойства opacity */
+  		@keyframes fadeIn {
+  				from {
+  						opacity: 0;
+  				}
+  				to {
+  						opacity: 1;
+  				}
+  		}
+  		/* Прячем чекбоксы */
+  		.tabs > input {
+  			display: none;
+  			position: absolute;
+  		}
+  		/* Стили переключателей вкладок (табов) */
+  		.tabs > label {
+  			display: inline-block;
+  			min-width: 62px;
+  			margin-right: -4px;
+  			padding: 10px 12px;
+        font-family: "Lato-Medium";
+  			font-size: 18px;
+  			font-weight: 500;
+  			text-align: center;
+  			color: #fff;
+  			border-right: 2px solid #ce242b;
+  			background: #000;
+  			border-radius: 3px 3px 0 0;
+  		}
+  		/* Шрифт-иконки от Font Awesome в формате Unicode */
+  		.tabs > label:before {
+  			display: none;
+  			font-family:'FontAwesome';
+  			font-weight: normal;
+  			margin-right: 10px;
+  		}
+  		.tabs > label[for*="tab1"]:before {
+  			content: "\f19c";
+  		}
+  		.tabs > label[for*="tab2"]:before {
+  			content: "\f0f7";
+  		}
+  		.tabs > label[for*="tab3"]:before {
+  			content: "\f03e";
+  		}
+  		.tabs > label[for*="tab4"]:before {
+  			content: "\f046";
+  		}
+  		/* Изменения стиля переключателей вкладок при наведении */
+  		.tabs > label:hover {
+  			cursor: pointer;
+  		}
+  		/* Стили для активной вкладки */
+  		.tabs > input:checked + label {
+  			color: #fff;
+  			background: #ce242b;
+  		}
+  		/* Активация секций с помощью псевдокласса :checked */
+  		#tab1:checked ~ #content-tab1,
+  		#tab2:checked ~ #content-tab2,
+  		#tab3:checked ~ #content-tab3,
+  		#tab4:checked ~ #content-tab4 {
+  			display: block;
+  			border-radius: 0 0 3px 3px;
+  		}
+  		/*Стили для форм*/
+  		.field-selection > label,
+  		.half > label{
+  			display: none;
+  		}
+  		.field-selection > input,
+  		.field-selection > select,
+  		.half > select{
+  			width: 100%;
+  			padding: 7px 10px;
+  			border: none;
+  			background: #f4f4f3;
+  			margin-bottom: 10px;
+  			font-size: 16px;
+  			border-radius: 3px;
+  		}
+  		.field-selection > input{
+  			width:340px;
+  		}
+  		/*Стилизуем поля ввода при наведении*/
+  		.field-selection > input:hover,
+  		.field-selection > select:hover,
+  		.half > select:hover{
+  			background-color: rgba(192,192,192,0.5);
+  		}
+  		.field-selection:hover > input[type="text"]::-webkit-input-placeholder {
+  			color:#ce242b;
+  		}
+  		.field-selection:hover > input[type="text"]::-moz-placeholder{
+  			color:#ce242b;
+  		}
+  		.field-selection:hover > input[type="text"]:-ms-input-placeholder{
+  			color:#ce242b;
+  		}
+  		.rent_r,
+  		.sale_r,
+  		.rent_c,
+  		.sale_c{
+  			display: none;
+  		}
+  		.field-selection > select > option[value="choose the location"]{
+  			color: #ce242b;
+  		}
+  	.field-half{
+  		display: flex;
+  		justify-content: space-between;
+  	}
+  		.half{
+  			width: 47%;
+  		}
+  	.submit-button{
+  		margin-top: 30px;
+  	}
+  		.submit-button > input{
+  			width: 100%;
+  			padding: 7px 10px;
+  			border: none;
+  			background: #ce242b;
+  			cursor: pointer;
+  			font-size: 16px;
+  			color: #fff;
+  			border-radius: 3px;
+  		}
+  /* Убираем текст с переключателей и вставляем иконки на малых экранах*/
+  @media screen and (max-width: 680px) {
+  	.tabs > label {
+  		font-size: 0;
+  		width: 17%;
+  	}
+  	.tabs > label:before {
+  		display: block;
+  		margin: 0;
+  		font-size: 18px;
+  	}
+  }
+  /* Изменяем внутренние отступы переключателей для малых экранов*/
+  @media screen and (max-width: 400px) {
+  	.tabs > label {
+  		padding: 15px;
+  	}
+  }
+  /*--------- конец настроек форм ----------*/
+  /*----FEATURED PROPERTIES----*/
+  .features {
+    display: block;
+    width: 100%;
+    margin-top: 0;
+  }
